@@ -1,0 +1,17 @@
+from Free Music Archive
+http://freemusicarchive.org/curator/WFMU/
+
+agns_pe_-_Carmen_Suite_Toreador_-_Georges_Bizet
+Anitek_-_02_-_The_3rd
+Jahzzar_-_09_-_biznezz
+krackatoa_-_13_-_Hefty_Leftie_Drop_Attack
+Los_Vigilantes_-_02_-_Un_Dia_Nada_Mas
+Nullsleep_-_14_-_Chippon
+Olneyville_Sound_System_-_02_-_Dynamite_2
+Podington_Bear_-_Happytime
+Sam_Gas_Can_-_Cold_Winter_Blues_Lucille_Hegamin_And_The_Dixie_Daisies
+The_Procedure_Club_-_Let_Us_Leave_The_Town_Henry_Purcell
+Ugly_Parts_-_08_-_Drain
+Vi-Fi_-_01_-_Before_and_After_Kalm
+We_Are_All_Alone_-_04_-_IV_And_It_Feels_Like_The_End
+Youth_Avoiders_-_01_-_Cold_Mines
