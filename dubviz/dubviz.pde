@@ -1,7 +1,7 @@
 Maxim maxim;
 Sound[] sounds;
-int w = 400;
-int h = 400;
+int w = 1200;
+int h = 800;
 int soundH, marginY, totalMargins;
 int play1 = 0;
 int play2 = 1;
@@ -22,7 +22,7 @@ int[] primes = new int[] {
 // should also help prevent spirals I think
 int numSquares = primes[round(random(0, primes.length-1))];
 float rotationDirection = 1.0; // clockwise
-int transitionFrames = 3;
+int transitionFrames = 10;
 int songSquareSize = 20;
 
 void setup() {
@@ -61,6 +61,9 @@ void draw()
   float fadeAlpha = 10 + 200*hold/transitionFrames;
   background(0, 0, 0, fadeAlpha);
 
+  // effects
+  float speed = dist(pmouseX, pmouseY, mouseX, mouseY);
+
   // draw a square for each song, highlight those that are playing
   float mid = (width-20.0)/(float)sounds.length - songSquareSize*2.0;
   for (int i=0; i<sounds.length; i++) {
@@ -71,6 +74,11 @@ void draw()
       fill(200, 200, 0);
       rect(x, y, songSquareSize, songSquareSize);
       sounds[i].updatePower();
+      if(speed > 3){
+        sounds[i].player.speed(1 + 3*speed/(w*h));
+      }else{
+        sounds[i].player.speed(1);
+      }
     }
     else {
       noStroke();
@@ -110,7 +118,7 @@ void draw()
   for (int j=0; j<numSquares; j++) {
     stroke(200, 200, 0, 50);
     if (beat) {
-      int alpha = (int)(50.0*hold/transitionFrames);
+      int alpha = (int)(30.0*hold/transitionFrames);
       fill(160, 90, 0, alpha);
     }
     else {
@@ -121,20 +129,14 @@ void draw()
 
     float size = j*5;
     if (beat) {
-      //    scale(1.0 + hold/transitionFrames*1.1); // cycle from 1.4 back to 1
       size *= 1.0 + hold/transitionFrames*1.1; // cycle from 1.4 back to 1
     }
 
     rect(j, j, size, size);
-
-    // some extra fill near the mouse
-    noStroke();
-    fill(100 + j/numSquares * 50, 100 + j/numSquares*10, 0, 5);
-    ellipse(j, j, size, size);
   }
   popMatrix();
 
-  hold--;
+  hold = hold > 0 ? hold-1 : 0;
   time += 0.01;
 }
 
